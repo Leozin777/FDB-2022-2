@@ -18,7 +18,7 @@ create table produtos
     data_cadastro date not null,
     valor_unitario int not null,
     constraint produto_fk_produto_tem_categorias
-    foreign key(id_categoria) references(categorias),
+    foreign key(id_categoria) references categorias(id)
 )
 
 create table pedidos
@@ -29,7 +29,7 @@ create table pedidos
     valor_unitario int not null,
     data_pedido date not null,
     constraint pedido_fk_pedido_tem_fornecedor
-    foreign key(id_fornecedor) references(fornecedores),
+    foreign key(id_fornecedor) references fornecedores(id),
     constraint pedido_fk_pedido_possui_produto
-    foreign key(id_produto) references(produtos)
+    foreign key(id_produto) references produtos(id)
 )

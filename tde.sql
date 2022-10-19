@@ -74,3 +74,7 @@ create table projetos_sociais
     constraint projetos_fk_projetos_sociais
     foreign key(id_projeto) references projetos(id)
 );
+
+ALTER table fornecedores
+add COLUMN data_ultima_compra date
+
